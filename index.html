@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para Encontro, com Ana Araujo</title>
+    <link rel="stylesheet" href="css/style_convite.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ana, você gostaria de sair comigo?</h1>
+        <p>Gostaria de convidá-la para um encontro especial. Que tal um jantar neste fim de semana?</p>
+        <button id="sim" onclick="confirmarPresenca()">Sim</button>
+        <button id="nao" onclick="moverBotao()">Não</button>
+    </div>
+    <div class="baloons">
+        <div class="baloon"></div>
+        <div class="baloon"></div>
+        <div class="baloon"></div>
+    </div>
+    <script>
+        function confirmarPresenca() {
+            alert('Ótimo! Vamos marcar os detalhes em breve.');
+        }
+
+        function moverBotao() {
+            var botao = document.getElementById("nao");
+            var container = document.querySelector(".container");
+            var containerRect = container.getBoundingClientRect();
+
+            var newLeft = Math.random() * (containerRect.width - botao.offsetWidth);
+            var newTop = Math.random() * (containerRect.height - botao.offsetHeight);
+
+            botao.style.position = "absolute";
+            botao.style.left = newLeft + "px";
+            botao.style.top = newTop + "px";
+        }
+    </script>
+</body>
+</html>

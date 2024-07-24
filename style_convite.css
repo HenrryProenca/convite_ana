@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('../imagens/ana.jpeg') no-repeat center center/cover;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#nao {
+    background-color: #dc3545;
+}
+
+#nao:hover {
+    background-color: #c82333;
+}
+
+.baloons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.baloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 80px;
+    background: url('../imagens/balao.webp') no-repeat center center/cover;
+    background-size: contain;
+    animation: rise 5s infinite;
+}
+
+.baloon:nth-child(2) {
+    left: 25%;
+    width: 60px;
+    height: 90px;
+    animation-duration: 6s;
+}
+
+.baloon:nth-child(3) {
+    left: 75%;
+    width: 40px;
+    height: 70px;
+    animation-duration: 7s;
+}
+
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+    }
+}
